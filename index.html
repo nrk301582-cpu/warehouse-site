@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OWPL – Bonded Warehousing, Ludhiana</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2fc6a2;--teal2:#1f9d80;--navy:#0f2235;--navy2:#16365d;--ink:#1b2530;--mute:#5b6773;--line:#dde2e7;--pale:#f4f6f8;--head:Oswald,'Arial Narrow',Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.7 Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+h1,h2,h3{font-family:var(--head);font-weight:300;letter-spacing:.02em;line-height:1.15;margin:0 0 .5em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}h3{font-size:1.4rem;font-weight:400}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+
+/* top menu, see-through on the home page */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;transition:background .3s}
+nav.solid{background:var(--navy)}
+nav .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 24px;padding-top:16px;padding-bottom:16px}
+.logo{color:#fff;text-decoration:none;font:300 1.7rem var(--head);letter-spacing:.05em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px 22px;flex-wrap:wrap}
+nav ul a{color:#dfe7ee;text-decoration:none;font:300 .95rem var(--head);text-transform:uppercase;letter-spacing:.07em}
+nav ul a:hover,nav ul a.on{color:var(--teal)}
+
+/* pages */
+.page{display:none}.page.on{display:block}
+.inner{padding:120px 0 64px;min-height:80vh}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;border:0;border-radius:3px;padding:14px 34px;font:400 1rem Arial,sans-serif;cursor:pointer}
+.btn:hover{background:var(--teal2)}
+.btn.ghost{background:transparent;border:2px solid #fff}
+
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:120px 24px 70px;
+ background:linear-gradient(rgba(10,25,40,.6),rgba(10,25,40,.6)),url(photos/hero.jpg) center/cover,var(--navy2)}
+.hero h1{font-size:clamp(2.3rem,7vw,4.6rem);text-transform:uppercase;font-weight:300;margin-bottom:.2em}
+.hero .sub{font-size:1.1rem;color:#dbe6ef;max-width:620px;margin:0 auto 28px}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.tag{display:inline-block;font:300 1rem var(--head);letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;padding:56px 0}
+.card .photo{aspect-ratio:4/3;margin-bottom:14px}
+.card p{color:var(--mute);margin:0 0 8px}
+.card.main{border-top:5px solid var(--teal);padding-top:12px}
+.card a.more{color:var(--teal2);font-weight:bold;text-decoration:none}
+.photo{background:linear-gradient(135deg,var(--navy2),var(--navy));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#9fb2c8;font-size:.82rem}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:12px 0 12px 52px;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:12px;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;text-align:center;line-height:36px;font-weight:bold}
+.steps b{display:block}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:22px}
+.box{border:1px solid var(--line);padding:22px;border-radius:4px}
+.box p{margin:0;color:var(--mute)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:22px}
+.gal .photo{aspect-ratio:4/3}
+form label{display:block;font-size:.85rem;color:var(--mute);margin:12px 0 3px}
+form input,form textarea,.tbox select,.tbox input{width:100%;font:inherit;padding:11px;border:1px solid #98a3b0;border-radius:3px}
+.tbox{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.tbox select{flex:0 1 190px}.tbox input{flex:1 1 220px;width:auto}
+.tmsg{background:var(--pale);border-radius:4px;padding:14px 18px}
+.tres{border:1px solid var(--line);border-radius:4px;padding:20px}
+.tres h3{margin:0 0 2px}.tres small{color:var(--mute)}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.nums div{border:1px solid var(--line);border-radius:4px;padding:10px}
+.nums b{display:block;font:300 2rem var(--head);line-height:1.2}
+.nums .left b{color:var(--teal2)}
+.tres table{width:100%;border-collapse:collapse;font-size:.9rem}
+.tres th,.tres td{text-align:left;padding:7px 4px;border-bottom:1px solid var(--line)}
+footer{background:var(--navy);color:#9fb2c8;padding:26px 0;font-size:.88rem}
+footer b{color:#fff}
+
+/* loading screen: see-through blur, small cargo truck going into the godown */
+#loader{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#loader.on{display:flex}
+#loader .lbox{width:230px;text-align:center;color:var(--navy);font:300 .95rem var(--head);letter-spacing:.12em;text-transform:uppercase}
+#loader svg{width:100%;height:auto;display:block}
+.truck{animation:go 1.6s ease-in infinite}
+@keyframes go{0%{transform:translateX(-95px)}72%{transform:translateX(165px)}100%{transform:translateX(165px)}}
+@media(prefers-reduced-motion:reduce){.truck{animation:none;transform:translateX(40px)}}
+@media(max-width:760px){.two{grid-template-columns:1fr}.inner{padding-top:150px}}
+</style>
+</head>
+<body>
+
+<div id="loader" role="status" aria-label="Loading">
+  <div class="lbox">
+    <svg viewBox="0 0 240 110" aria-hidden="true">
+      <defs><clipPath id="cp"><rect x="0" y="0" width="156" height="110"/></clipPath></defs>
+      <line x1="0" y1="95" x2="240" y2="95" stroke="#0f2235" stroke-width="3"/>
+      <g clip-path="url(#cp)"><g class="truck">
+        <rect x="0" y="52" width="50" height="34" fill="#2fc6a2"/>
+        <rect x="52" y="62" width="26" height="24" fill="#0f2235"/>
+        <rect x="62" y="66" width="12" height="9" fill="#cfeff0"/>
+        <circle cx="14" cy="88" r="7" fill="#1b2530"/><circle cx="40" cy="88" r="7" fill="#1b2530"/><circle cx="68" cy="88" r="7" fill="#1b2530"/>
+      </g></g>
+      <polygon points="146,36 194,12 242,36" fill="#0f2235"/>
+      <rect x="152" y="36" width="84" height="59" fill="#16365d"/>
+      <rect x="158" y="48" width="72" height="47" fill="#07121e"/>
+    </svg>
+    Loading cargo
+  </div>
+</div>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#home">OWPL</a>
+  <ul id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#bonded">Bonded warehouse</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why choose us</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#customer">New customer</a></li>
+    <li><a href="#track">Track cargo</a></li>
+  </ul>
+</div></nav>
+
+<!-- HOME -->
+<div class="page on" id="p_home">
+  <header class="hero"><div>
+    <span class="tag">Overseas Warehousing Pvt Ltd · Ludhiana</span>
+    <h1>Bonded warehousing</h1>
+    <p class="sub">Store imported goods under bond and check your balance online with just your SAC no or Bill of Entry no.</p>
+    <div class="btns"><a class="btn" href="#track">Track your cargo</a><a class="btn ghost" href="#customer">New customer</a></div>
+  </div></header>
+  <div class="wrap"><div class="cards">
+    <div class="card main"><div class="photo"><img src="photos/card1.jpg" alt="Bonded warehouse" onerror="this.remove()"><span>photos/card1.jpg</span></div>
+      <span class="tag" style="font-size:.8rem;margin:0">Main service</span><h3>Bonded warehouse</h3><p>Customs-bonded storage with part clearance and a full record of every movement.</p><a class="more" href="#bonded">Read more</a></div>
+    <div class="card"><div class="photo"><img src="photos/card2.jpg" alt="Container freight station" onerror="this.remove()"><span>photos/card2.jpg</span></div>
+      <h3>Container freight station</h3><p>Export and import container handling for Punjab, Himachal Pradesh and Jammu.</p><a class="more" href="#services">Read more</a></div>
+    <div class="card"><div class="photo"><img src="photos/card3.jpg" alt="General warehousing" onerror="this.remove()"><span>photos/card3.jpg</span></div>
+      <h3>General warehousing</h3><p>Safe storage for goods that do not need a bond, with the same online tracking.</p><a class="more" href="#services">Read more</a></div>
+  </div></div>
+</div>
+
+<!-- BONDED -->
+<div class="page" id="p_bonded"><div class="wrap inner two">
+  <div>
+    <span class="tag">Our main service</span>
+    <h2>Bonded warehouse</h2>
+    <p>Keep imported goods in a customs-bonded warehouse and clear them in parts as your buyers need them, instead of paying duty on everything at once.</p>
+    <p>Each cargo has one record. Search it by SAC no or Bill of Entry no and the same data opens: goods received, goods taken out, goods left, last movement, weight and 20 ft / 40 ft containers.</p>
+    <p><a class="btn" href="#customer">Ask about bonded storage</a></p>
+  </div>
+  <ol class="steps">
+    <li><b>Goods arrive</b>We record the SAC no, Bill of Entry no, weight and containers.</li>
+    <li><b>Stored under bond</b>Your cargo stays in the bonded area until you clear it.</li>
+    <li><b>Cleared in parts</b>Every removal is logged with date and quantity.</li>
+    <li><b>You track it online</b>Type your SAC no or Bill of Entry no to see your balance.</li>
+  </ol>
+</div></div>
+
+<!-- SERVICES -->
+<div class="page" id="p_services"><div class="wrap inner">
+  <h2>Services</h2>
+  <div class="grid3">
+    <div class="box"><h3>Bonded warehousing</h3><p>Customs-bonded storage for imported goods, with part clearance and a full movement record.</p></div>
+    <div class="box"><h3>Container freight station</h3><p>Handling of export and import containers for Punjab, Himachal Pradesh and Jammu.</p></div>
+    <div class="box"><h3>General warehousing</h3><p>Safe storage for goods that do not need a bond, with the same online tracking.</p></div>
+  </div>
+</div></div>
+
+<!-- WHY -->
+<div class="page" id="p_why"><div class="wrap inner">
+  <h2>Why choose us</h2>
+  <div class="grid3">
+    <div class="box"><h3>Clear records</h3><p>One record per cargo. Balance and last movement are calculated, not typed by hand.</p></div>
+    <div class="box"><h3>Easy tracking</h3><p>Type your SAC no or Bill of Entry no and see your cargo. No login needed.</p></div>
+    <div class="box"><h3>Local team</h3><p>Our Ludhiana office is a call away when you need a delivery or a status update.</p></div>
+  </div>
+</div></div>
+
+<!-- GALLERY -->
+<div class="page" id="p_gallery"><div class="wrap inner">
+  <h2>Our warehouse</h2>
+  <div class="gal">
+    <div class="photo"><img src="photos/gallery1.jpg" alt="Warehouse interior" onerror="this.remove()"><span>photos/gallery1.jpg</span></div>
+    <div class="photo"><img src="photos/gallery2.jpg" alt="Bonded storage area" onerror="this.remove()"><span>photos/gallery2.jpg</span></div>
+    <div class="photo"><img src="photos/gallery3.jpg" alt="Container yard" onerror="this.remove()"><span>photos/gallery3.jpg</span></div>
+    <div class="photo"><img src="photos/gallery4.jpg" alt="Loading area" onerror="this.remove()"><span>photos/gallery4.jpg</span></div>
+    <div class="photo"><img src="photos/gallery5.jpg" alt="Office" onerror="this.remove()"><span>photos/gallery5.jpg</span></div>
+    <div class="photo"><img src="photos/gallery6.jpg" alt="Main gate" onerror="this.remove()"><span>photos/gallery6.jpg</span></div>
+  </div>
+</div></div>
+
+<!-- NEW CUSTOMER -->
+<div class="page" id="p_customer"><div class="wrap inner two">
+  <div>
+    <h2>New customer?</h2>
+    <p>Tell us what you want to store and we will contact you. Sending this form opens your email app with the details filled in.</p>
+    <p id="contactLines"></p>
+  </div>
+  <form id="enq">
+    <label for="f_name">Your name</label><input id="f_name" required>
+    <label for="f_co">Company</label><input id="f_co">
+    <label for="f_ph">Phone</label><input id="f_ph" type="tel" required>
+    <label for="f_goods">What goods, and how much?</label><textarea id="f_goods" rows="3"></textarea>
+    <p><button class="btn" type="submit">Send enquiry</button></p>
+  </form>
+</div></div>
+
+<!-- TRACK -->
+<div class="page" id="p_track"><div class="wrap inner" style="max-width:800px">
+  <h2>Track your cargo</h2>
+  <p>Enter your SAC no or Bill of Entry no.</p>
+  <div class="tbox">
+    <select id="t_mode" aria-label="Search by"><option value="sac_no">SAC no</option><option value="bill_of_entry_no">Bill of Entry no</option></select>
+    <input id="t_q" placeholder="Type the number" aria-label="Number">
+    <button class="btn" id="t_go" type="button">Track</button>
+  </div>
+  <div id="t_out" aria-live="polite"></div>
+</div></div>
+
+<footer><div class="wrap"><b>Overseas Warehousing Pvt Ltd (OWPL)</b> · <span id="addr"></span></div></footer>
+
+<script>
+/* EDIT THESE THREE LINES with your real details */
+var PHONE='+91-XXXXXXXXXX', EMAIL='your-email@example.com', ADDRESS='Ludhiana, Punjab';
+
+var SB_URL='https://ubnjlbahveqyeervdkwa.supabase.co', SB_KEY='sb_publishable_nu5RQSkW2iillYWWx0PcBw_NQZcuxnx';
+var pages=['home','bonded','services','why','gallery','customer','track'];
+var ld=document.getElementById('loader');
+function $(id){return document.getElementById(id);}
+function esc(x){var d=document.createElement('div');d.textContent=(x==null)?'':String(x);return d.innerHTML;}
+function nm(n){return n==null?'-':Number(n).toLocaleString();}
+
+/* loading screen, then switch page */
+function load(ms,fn){ld.classList.add('on');setTimeout(function(){if(fn)fn();ld.classList.remove('on');},ms);}
+function show(n){
+  if(pages.indexOf(n)<0)n='home';
+  pages.forEach(function(p){$('p_'+p).classList.toggle('on',p===n);});
+  $('nav').classList.toggle('solid',n!=='home');
+  Array.prototype.forEach.call($('menu').querySelectorAll('a'),function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+n);});
+  window.scrollTo(0,0);
+}
+window.onhashchange=function(){var n=location.hash.slice(1)||'home';load(900,function(){show(n);});};
+load(1100,function(){show(location.hash.slice(1)||'home');});
+
+$('contactLines').textContent='Phone: '+PHONE+'   Email: '+EMAIL;
+$('addr').textContent=ADDRESS;
+$('enq').onsubmit=function(e){
+  e.preventDefault();
+  var v=function(id){return $(id).value;};
+  var body='Name: '+v('f_name')+'\nCompany: '+v('f_co')+'\nPhone: '+v('f_ph')+'\nGoods: '+v('f_goods');
+  location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('New customer enquiry')+'&body='+encodeURIComponent(body);
+};
+
+/* track cargo: no login, exact SAC no or Bill of Entry no only */
+function tmsg(t){$('t_out').innerHTML='<div class="tmsg">'+esc(t)+'</div>';}
+async function track(){
+  var q=$('t_q').value.trim();
+  if(!q){tmsg('Type your number first.');return;}
+  ld.classList.add('on');
+  try{
+    var res=await fetch(SB_URL+'/rest/v1/rpc/track_cargo',{method:'POST',
+      headers:{'apikey':SB_KEY,'Content-Type':'application/json'},
+      body:JSON.stringify({p_mode:$('t_mode').value,p_number:q})});
+    if(!res.ok){tmsg('Could not check right now. Please try again in a minute.');return;}
+    var d=await res.json();
+    if(!d){tmsg('No cargo found for that number. Check the number and try again.');return;}
+    var h='<div class="tres"><h3>'+esc(d.goods||'Cargo')+'</h3><small>SAC no '+esc(d.sac_no)+' · Bill of Entry no '+esc(d.bill_of_entry_no)+' · Date in '+esc(d.date_in||'-')+'</small>'
+     +'<p style="margin:8px 0 0"><small>First party: <b>'+esc(d.party_name||'-')+'</b> · C.H.A.: <b>'+esc(d.cha_name||'-')+'</b></small></p>'
+     +'<div class="nums"><div class="left"><small>Goods left</small><b>'+nm(d.goods_left)+'</b></div>'
+     +'<div><small>Total received</small><b>'+nm(d.total_quantity)+'</b></div>'
+     +'<div><small>Taken out</small><b>'+nm(d.quantity_out_total)+'</b></div>'
+     +'<div><small>Last movement</small><b style="font-size:1.2rem">'+esc(d.last_movement_date||'None')+'</b><small>'+(d.last_movement_quantity!=null?nm(d.last_movement_quantity)+' out':'')+'</small></div></div>'
+     +'<div class="nums"><div><small>Cargo weight</small><b>'+nm(d.cargo_weight)+'</b></div>'
+     +'<div><small>20 ft containers</small><b>'+nm(d.containers_20)+'</b></div>'
+     +'<div><small>40 ft containers</small><b>'+nm(d.containers_40)+'</b></div></div>';
+    if(d.movements&&d.movements.length){
+      h+='<table><thead><tr><th>Date out</th><th>Quantity</th><th>Weight</th></tr></thead><tbody>';
+      d.movements.forEach(function(m){h+='<tr><td>'+esc(m.move_date)+'</td><td>'+nm(m.quantity_out)+'</td><td>'+nm(m.weight_out)+'</td></tr>';});
+      h+='</tbody></table>';
+    }else h+='<p>Nothing has been taken out yet.</p>';
+    $('t_out').innerHTML=h+'</div>';
+  }catch(e){tmsg('No internet connection. Please try again.');}
+  finally{setTimeout(function(){ld.classList.remove('on');},500);}
+}
+$('t_go').onclick=track;
+$('t_q').onkeydown=function(e){if(e.key==='Enter')track();};
+</script>
+</body>
+</html>
